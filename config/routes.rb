@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
-namespace :admin do
-  resources :items, except: [:destroy]
-end
-
+  namespace :admin do
+    resources :items, except: [:destroy]
+  end
+  
+  scope module: :public do
+    resources :items, only: [:index, :show]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
