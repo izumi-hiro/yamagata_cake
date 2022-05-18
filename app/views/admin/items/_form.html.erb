@@ -20,14 +20,7 @@
         <div class="form-group row">
           <label class="col-sm-3 col-form-label">ジャンル</label>
           <div class="col-md-9">
-            <div class="box">
-              <select>
-                <option value="1">ジャンルA</option>
-                <option value="2">ジャンルB</option>
-                <option value="3">ジャンルC</option>
-                <option value="4">ジャンルD</option>
-               </select>
-            </div>
+            <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), class: 'form-control item_genre_id' %>
           </div>
         </div>
         <div class="form-group row">
